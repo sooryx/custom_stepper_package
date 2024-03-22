@@ -1,10 +1,10 @@
-# custom_stepper 0.0.1
+# customisable_stepper 0.1.1
 
 **custom_stepper** - Easy Step-by-Step Forms for Flutter
 
 The `custom_stepper` package provides a user-friendly and easily customizable stepper widget for Flutter applications. This widget simplifies the creation of step-by-step forms, guiding users through a multi-stage process intuitively.
 
-![custom_stepper.gif](custom_stepper.gif)
+![custom_stepper.gif](https://github.com/sooryx/custom_stepper_package/blob/main/custom_stepper.gif)
 
 ## Key Features:
 
