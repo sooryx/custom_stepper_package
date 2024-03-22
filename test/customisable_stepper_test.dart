@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 
 class MyStepper extends StatefulWidget {
@@ -64,11 +65,11 @@ class _MyStepperState extends State<MyStepper> {
           (index) => Step(
         state: _stepState(index),
         subtitle: widget.steps[index].subtitle,
-        title: widget.steps[index].title ?? Text(''),
+        title: widget.steps[index].title ?? const Text(''),
         isActive: currentStep <= index,
         label: Text(
           widget.steps[index].label ?? '',
-          style: TextStyle(color: Colors.white, fontSize: 12),
+          style: const TextStyle(color: Colors.white, fontSize: 12),
         ),
         content: widget.steps[index].content,
       ),
@@ -85,11 +86,11 @@ class _MyStepperState extends State<MyStepper> {
           currentStep: currentStep,
           stepIconBuilder: (stepIndex, stepState) {
             if (stepState == StepState.complete) {
-              return widget.completedIcon ?? Icon(Icons.check);
+              return widget.completedIcon ?? const Icon(Icons.check);
             } else if (stepState == StepState.indexed) {
-              // Display different numbers for different steps
               return widget.inProgressIcon ?? Text("${stepIndex + 1}");
             }
+            return null;
           },
           controlsBuilder: controlsBuilder,
           connectorThickness: widget.thickness ?? 1.5,
@@ -120,7 +121,7 @@ class _MyStepperState extends State<MyStepper> {
         Positioned(
             top: MediaQuery.of(context).size.height / 50,
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Container(
                 height: 80,
                 width: MediaQuery.of(context).size.width - 20,
@@ -137,7 +138,7 @@ class _MyStepperState extends State<MyStepper> {
   Widget controlsBuilder(
       BuildContext context, ControlsDetails controlsDetails) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 10.0),
+      padding: const EdgeInsets.symmetric(horizontal: 10.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -146,19 +147,19 @@ class _MyStepperState extends State<MyStepper> {
             InkWell(
                 onTap: controlsDetails.onStepCancel,
                 child:
-                widget.backIcon ?? Icon(Icons.arrow_back_ios_new_rounded)),
+                widget.backIcon ?? const Icon(Icons.arrow_back_ios_new_rounded)),
           InkWell(
             onTap: controlsDetails.onStepContinue,
             child: Container(
-                padding: EdgeInsets.all(7),
+                padding: const EdgeInsets.all(7),
                 decoration: BoxDecoration(
                   color: widget.buttonColor ??
                       Theme.of(context).colorScheme.primary,
                   shape: BoxShape.circle,
                 ),
                 child: showSubmit
-                    ? widget.endIcon ?? Icon(Icons.check)
-                    : widget.nextIcon ?? Icon(Icons.arrow_forward_ios_rounded)),
+                    ? widget.endIcon ?? const Icon(Icons.check)
+                    : widget.nextIcon ?? const Icon(Icons.arrow_forward_ios_rounded)),
           ),
         ],
       ),
