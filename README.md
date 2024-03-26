@@ -56,7 +56,6 @@ class HomeScreen extends StatelessWidget {
 }
 ```
 
-![custom_stepper1.gif](custom_stepper1.gif)
 
 
 Make your forms effortless with the `custom_stepper` package!
